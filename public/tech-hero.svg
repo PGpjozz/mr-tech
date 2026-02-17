@@ -1,0 +1,76 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="120" y1="80" x2="1120" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#a78bfa" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+      <stop stop-color="#0b1220"/>
+      <stop offset="1" stop-color="#020617"/>
+    </linearGradient>
+    <filter id="blurGlow" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.55 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" stroke="#94a3b8" stroke-opacity="0.12" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#g2)"/>
+  <rect width="1200" height="900" fill="url(#grid)"/>
+
+  <g filter="url(#blurGlow)">
+    <path d="M187 626C273 462 420 365 606 333C812 297 965 357 1106 504" stroke="url(#g1)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M138 522C274 372 448 285 640 278C825 271 963 338 1082 439" stroke="#22d3ee" stroke-opacity="0.25" stroke-width="7" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.92">
+    <rect x="220" y="210" width="760" height="520" rx="28" fill="#0b1220" stroke="#e2e8f0" stroke-opacity="0.12"/>
+    <rect x="250" y="244" width="700" height="120" rx="18" fill="#020617" stroke="#e2e8f0" stroke-opacity="0.10"/>
+
+    <g opacity="0.88">
+      <circle cx="286" cy="278" r="7" fill="#22c55e"/>
+      <circle cx="312" cy="278" r="7" fill="#f59e0b"/>
+      <circle cx="338" cy="278" r="7" fill="#ef4444"/>
+    </g>
+
+    <rect x="250" y="388" width="334" height="140" rx="18" fill="#020617" stroke="#e2e8f0" stroke-opacity="0.10"/>
+    <rect x="616" y="388" width="334" height="140" rx="18" fill="#020617" stroke="#e2e8f0" stroke-opacity="0.10"/>
+    <rect x="250" y="548" width="700" height="150" rx="18" fill="#020617" stroke="#e2e8f0" stroke-opacity="0.10"/>
+
+    <path d="M284 438H528" stroke="#22d3ee" stroke-opacity="0.65" stroke-width="6" stroke-linecap="round"/>
+    <path d="M284 472H446" stroke="#a78bfa" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round"/>
+    <path d="M284 506H506" stroke="#22c55e" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round"/>
+
+    <path d="M650 438H894" stroke="#22d3ee" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round"/>
+    <path d="M650 472H812" stroke="#a78bfa" stroke-opacity="0.45" stroke-width="6" stroke-linecap="round"/>
+    <path d="M650 506H870" stroke="#22c55e" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round"/>
+
+    <g opacity="0.9">
+      <path d="M280 602H450" stroke="#94a3b8" stroke-opacity="0.55" stroke-width="6" stroke-linecap="round"/>
+      <path d="M280 636H540" stroke="#94a3b8" stroke-opacity="0.40" stroke-width="6" stroke-linecap="round"/>
+      <path d="M280 670H500" stroke="#94a3b8" stroke-opacity="0.30" stroke-width="6" stroke-linecap="round"/>
+    </g>
+
+    <g opacity="0.6">
+      <path d="M430 318C490 300 550 292 610 292C735 292 850 328 942 398" stroke="#22d3ee" stroke-opacity="0.35" stroke-width="3" stroke-linecap="round"/>
+      <path d="M332 596C370 560 430 538 500 538H700C788 538 868 570 930 624" stroke="#a78bfa" stroke-opacity="0.28" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="430" cy="318" r="5" fill="#22d3ee" fill-opacity="0.55"/>
+      <circle cx="942" cy="398" r="5" fill="#22d3ee" fill-opacity="0.55"/>
+      <circle cx="332" cy="596" r="5" fill="#a78bfa" fill-opacity="0.5"/>
+      <circle cx="930" cy="624" r="5" fill="#a78bfa" fill-opacity="0.5"/>
+    </g>
+  </g>
+
+  <g opacity="0.65" filter="url(#blurGlow)">
+    <circle cx="170" cy="160" r="120" fill="#22d3ee" fill-opacity="0.12"/>
+    <circle cx="1040" cy="140" r="140" fill="#a78bfa" fill-opacity="0.10"/>
+    <circle cx="1010" cy="770" r="160" fill="#22c55e" fill-opacity="0.08"/>
+  </g>
+</svg>

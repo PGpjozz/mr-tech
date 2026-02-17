@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ProductCategory {
+  REFURB
+  ACCESSORY
+}
+
+enum StockStatus {
+  IN_STOCK
+  OUT_OF_STOCK
+}
+
+enum ProductCondition {
+  NEW
+  GOOD
+  FAIR
+}
+
+enum StorageType {
+  SSD
+  HDD
+}
+
+model Product {
+  id        String          @id @default(cuid())
+  category  ProductCategory
+  name      String
+  brand     String?
+  model     String?
+  condition ProductCondition?
+  warrantyDays Int?
+  featured  Boolean         @default(false)
+
+  cpu       String?
+  ramGb     Int?
+  storageGb Int?
+  storageType StorageType?
+  screenInches Float?
+  os        String?
+
+  accessoryType String?
+  compatibility String?
+  quantity  Int             @default(1)
+
+  notes     String?
+  imageUrl  String?
+  priceCents Int
+  status    StockStatus     @default(IN_STOCK)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
+
+  @@index([category])
+  @@index([status])
+  @@index([featured])
+  @@index([updatedAt])
+}
