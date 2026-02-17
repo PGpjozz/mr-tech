@@ -461,7 +461,7 @@ export function AdminProducts() {
                     <input
                       className="rounded-xl border border-white/10 bg-black/30 px-3 py-2"
                       defaultValue={toInputInt(p.warrantyDays)}
-                      onBlur={(e) => void updateProduct(p.id, { warrantyDays: e.target.value })}
+                      onBlur={(e) => void updateProduct(p.id, { warrantyDays: Number(e.target.value) })}
                       disabled={busy}
                       placeholder="e.g. 30"
                     />
@@ -520,7 +520,7 @@ export function AdminProducts() {
                     <input
                       className="rounded-xl border border-white/10 bg-black/30 px-3 py-2"
                       defaultValue={toInputInt(p.ramGb)}
-                      onBlur={(e) => void updateProduct(p.id, { ramGb: e.target.value })}
+                      onBlur={(e) => void updateProduct(p.id, { ramGb: Number(e.target.value) })}
                       disabled={busy}
                       placeholder="e.g. 8"
                     />
@@ -531,7 +531,7 @@ export function AdminProducts() {
                     <input
                       className="rounded-xl border border-white/10 bg-black/30 px-3 py-2"
                       defaultValue={toInputInt(p.storageGb)}
-                      onBlur={(e) => void updateProduct(p.id, { storageGb: e.target.value })}
+                      onBlur={(e) => void updateProduct(p.id, { storageGb: Number(e.target.value) })}
                       disabled={busy}
                       placeholder="e.g. 256"
                     />
@@ -556,7 +556,7 @@ export function AdminProducts() {
                     <input
                       className="rounded-xl border border-white/10 bg-black/30 px-3 py-2"
                       defaultValue={toInputFloat(p.screenInches)}
-                      onBlur={(e) => void updateProduct(p.id, { screenInches: e.target.value })}
+                      onBlur={(e) => void updateProduct(p.id, { screenInches: Number(e.target.value) })}
                       disabled={busy}
                       placeholder="e.g. 14"
                     />
