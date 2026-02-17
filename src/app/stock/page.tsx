@@ -1,13 +1,16 @@
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import type { Product } from "@prisma/client";
 import Link from "next/link";
 import Image from "next/image";
+
+export const dynamic = "force-dynamic";
 
 function formatPrice(cents: number) {
   return `R ${Math.round(cents / 100)}`;
 }
 
 export default async function StockPage() {
+  const prisma = getPrisma();
   const products = await prisma.product.findMany({
     orderBy: [{ updatedAt: "desc" }],
   });

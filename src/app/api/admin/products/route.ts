@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
 
 export const runtime = "nodejs";
@@ -73,6 +73,7 @@ export async function GET() {
   }
 
   try {
+    const prisma = getPrisma();
     const products = await prisma.product.findMany({
       orderBy: [{ updatedAt: "desc" }],
     });
@@ -144,6 +145,7 @@ export async function POST(req: Request) {
   const featured = parseOptionalBool(body.featured);
 
   try {
+    const prisma = getPrisma();
     const created = await prisma.product.create({
       data: {
         category: body.category,

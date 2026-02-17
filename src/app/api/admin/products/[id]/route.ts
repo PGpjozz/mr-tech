@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
+import { getPrisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
 
 export const runtime = "nodejs";
@@ -127,6 +127,7 @@ export async function PUT(
   const priceCents = body.price === undefined ? undefined : parsePriceToCents(body.price);
 
   try {
+    const prisma = getPrisma();
     const updated = await prisma.product.update({
       where: { id },
       data: {
@@ -217,6 +218,7 @@ export async function DELETE(
 
   const { id } = await context.params;
   try {
+    const prisma = getPrisma();
     await prisma.product.delete({ where: { id } });
     return NextResponse.json({ ok: true });
   } catch (e) {
