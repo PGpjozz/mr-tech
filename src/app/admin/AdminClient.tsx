@@ -451,7 +451,7 @@ export function AdminProducts() {
                     <input
                       className="rounded-xl border border-white/10 bg-black/30 px-3 py-2"
                       defaultValue={String(p.quantity ?? 1)}
-                      onBlur={(e) => void updateProduct(p.id, { quantity: e.target.value })}
+                      onBlur={(e) => void updateProduct(p.id, { quantity: Number(e.target.value) })}
                       disabled={busy}
                     />
                   </label>
